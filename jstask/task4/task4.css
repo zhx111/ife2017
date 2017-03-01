@@ -1,0 +1,21 @@
+body{
+	padding: 0 auto;
+	margin:0 auto;
+}
+
+.number-queue {
+	margin-top: 10px;
+}
+
+.queue-item {
+	display: inline-block;
+	width:40px;
+	height: 40px;
+	margin-left: 15px;
+	text-align: center;
+	background: red;
+	color: white;
+	font-size: 16px;
+	line-height: 40px;
+	cursor: pointer;
+}
