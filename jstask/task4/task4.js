@@ -7,8 +7,10 @@ function handleButton() {
 		var type = target.id;
 		var number = document.getElementById('numberIn').value;
 		//根据选取到的id对数队列进行操作；
-		if(number){
+		if(Number(number)){
 			handleQueue(type,number);
+		}else {
+			alert('请输入正确值');
 		}
 	});
 }
