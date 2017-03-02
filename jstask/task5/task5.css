@@ -1,0 +1,27 @@
+body{
+	padding: 0 auto;
+	margin:0 auto;
+}
+
+.number-queue {
+	margin-top: 20px;
+	width: 1200px;
+	border:1px solid #eee;
+	height: 400px;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+
+.queue-item {
+	display: inline-block;
+	width:20px;
+	margin-left: 2px;
+	text-align: center;
+	background: red;
+	color: white;
+	font-size: 12px;
+	line-height: 20px;
+	cursor: pointer;
+}
