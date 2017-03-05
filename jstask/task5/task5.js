@@ -68,20 +68,17 @@ function setHeight(number,range,totalHight){
 
 async function sort(solution){
 	var queueChildList = Array.prototype.slice.call(document.querySelectorAll('.number-queue div'));
-	console.log(queueChildList);
 	//冒泡排序
 	for (let i = 0; i < queueChildList.length; i++) {
 		for (let j = 0; j < queueChildList.length-1; j++) {
-			
-				await sleep(500);
-				if (parseInt(queueChildList[j].innerText)>parseInt(queueChildList[j+1].innerText)) {
+			await sleep(500);
+			if (parseInt(queueChildList[j].innerText)>parseInt(queueChildList[j+1].innerText)) {
 				var temp;
 				var temp = queueChildList[j];
 				queueChildList[j] = queueChildList[j+1];
 				queueChildList[j+1] = temp;
 				swapSib(queueChildList[j],queueChildList[j+1]);
-				}
-			
+			}	
 		}
 	}
 }
