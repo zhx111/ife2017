@@ -1,0 +1,12 @@
+body{
+	padding: 0 auto;
+	margin:0 auto;
+}
+
+#content {
+	margin:20px;
+}
+
+em {
+	color: #a45ef1;
+}
