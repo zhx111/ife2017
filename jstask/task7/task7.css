@@ -1,0 +1,16 @@
+#root{
+	display: flex;
+	border:1px solid #000;
+	height: 500px;
+	width: 800px;
+	flex-direction: row;
+}
+
+.node{
+	min-width:40px;
+	min-height: 30px;
+	border: 1px solid #000;
+	margin:10px;
+	flex-grow: 1;
+	background-color: #fff;
+}
