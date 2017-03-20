@@ -1,0 +1,20 @@
+
+p {
+	margin-bottom: 20px;
+}
+
+.success{
+	border: 1px solid green;
+}
+
+.error{
+	border: 1px solid red;
+}
+
+.usernameSucc{
+	color: green;
+}
+
+.usernameErr{
+	color: red;
+}
