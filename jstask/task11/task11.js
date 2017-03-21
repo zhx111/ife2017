@@ -2,11 +2,27 @@ var util = {
 	calLen:function(value){
 		var len = value.replace(/[^\x00-\xff]/g,"AB").length;
 		return len;
+	},
+	testPassword:function(value){
+		var pattern = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9a-zA-Z]{6,14}$/;
+		return pattern.test(value);
+	},
+	testPhone:function(value){
+		var pattern = /^1[0-9]{10}$/;
+		return pattern.test(value);
+	},
+	testEmail:function(value){
+		var pattern = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+		return pattern.test(value);
 	}
+
 }
 
 const view = {
-	inputEl:document.querySelectorAll('input')
+	formEl:document.querySelector('form'),
+	submitEl:document.querySelector('button'),
+	inputEl:document.querySelectorAll('input'),
+	passwordEl:document.querySelector('#password')
 }
 
 var nodeQue = [];
@@ -47,13 +63,22 @@ function verify(value,type) {
 				return true;
 			}
 		}else if (type === 'user-password') {
+			return util.testPassword(value);
 
 		}else if (type === 'user-password-verify') {
+			var passwordValue = view.passwordEl.value;
+			if (passwordValue) {
+				if (value === passwordValue) {
+					return true;
+				}
+			}else {
+				return false;
+			}
+		}else if (type === 'user-email') {
+			return util.testEmail(value);
 
-		}else if (type === 'email') {
-
-		}else if (type === 'phone') {
-
+		}else if (type === 'user-phone') {
+			return util.testPhone(value);
 		}
 	}
 }
@@ -62,7 +87,12 @@ function changeNode(node,result){
 	if (result === true) {
 		node.classList.remove('error');
 		node.classList.add('success');
-		console.log(nodeQue);
+		node.nextElementSibling.style.display = 'none';
+		if (nodeQue.length === 1 ) {
+			nodeQue[0].nextElementSibling.nextElementSibling.nextElementSibling.style.display = 'block';
+		}else {
+			nodeQue[1].nextElementSibling.nextElementSibling.nextElementSibling.style.display = 'block';
+		}
 	}else{
 		node.classList.remove('success');
 		node.classList.add('error');
@@ -75,6 +105,25 @@ function changeNode(node,result){
 		
 	}
 }
+
+view.submitEl.addEventListener('click',(e)=>{
+	e.preventDefault();
+	var input = view.inputEl;
+	var count = 0;
+	for (var i = 0; i < input.length; i++) {
+		var className = input[i].getAttribute('class');
+		if(input[i].getAttribute('class').indexOf('success') !== -1){
+			count++;
+		}
+	}
+	console.log(count);
+	if (count === 5) {
+		alert('提交成功！');
+		view.formEl.submit();
+	}else{
+		alert('提交失败');
+	}
+});
 
 
 

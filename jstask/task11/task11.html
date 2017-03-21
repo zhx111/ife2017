@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>IFE JavaScript Task 10</title>
+	<title>IFE JavaScript Task 11</title>
 	<link rel="stylesheet" type="text/css" href="task11.css">
 </head>
 <body>
 	<form class="verify">
 		<p id="user-name">
-			<label for="">名称</label>
-			<input type="text" name="" required>
+			<label for="name">名称</label>
+			<input type="text" name="name" required>
 			<span class="usernameTip" style="display: none">必填，长度为4-16个字符</span>
 			<span class="usernameErr" style="display: none">您输入的值有误，请检查后再输入</span>
 			<span class="usernameSucc" style="display: none">您输入的值正确！</span>
 		</p>
 		<p id="user-password">
-			<label for="">密码</label>
-			<input type="text" name="">
-			<span class ="usernameTip" style="display: none">长度为6-14位,支持数字大小写字母和标点符号</span>
+			<label for="password">密码</label>
+			<input type="password" name="password" id="password">
+			<span class ="usernameTip" style="display: none">长度为6-14位,支持数字大小写字母</span>
 			<span class= "usernameErr" style="display: none">您输入的值有误，请检查后再输入</span>
 			<span class="usernameSucc" style="display: none">您输入的值正确！</span>
 		</p>
 		<p id="user-password-verify">
-			<label for="">密码确认</label>
-			<input type="text" name="">
+			<label for="password-verify">密码确认</label>
+			<input type="password" name="password-verify">
 			<span class= "usernameTip" style="display: none">再次输入相同密码</span>
 			<span class= "usernameErr" style="display: none">您输入的值有误，请检查后再输入</span>
 			<span class= "usernameSucc" style="display: none">您输入的值正确！</span>
 		</p>
-		<p id="email">
-			<label for="">邮箱</label>
-			<input type="email" name="">
+		<p id="user-email">
+			<label for="email">邮箱</label>
+			<input type="email" name="email" >
 			<span class= "usernameTip" style="display: none">请输入邮箱</span>
 			<span class= "usernameErr" style="display: none">您输入的值有误，请检查后再输入</span>
 			<span class= "usernameSucc" style="display: none">您输入的值正确！</span>
 		</p>
-		<p id="phone">
-			<label for="">手机号</label>
-			<input type="number" name="">
+		<p id="user-phone">
+			<label for="phone">手机号</label>
+			<input type="text" name="phone">
 			<span class ="usernameTip" style="display: none;">请输入11位手机号</span>
 			<span class ="usernameErr" style="display: none">您输入的值有误，请检查后再输入</span>
 			<span class ="usernameSucc" style="display: none">您输入的值正确！</span>
 		</p>
-		<button>提交</button>
+		<button type="submit">提交</button>
 	</form>
 	<script type="text/javascript" src="task11.js"></script>
 </body>
